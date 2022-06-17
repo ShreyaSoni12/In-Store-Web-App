@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page2</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
@@ -13,26 +13,27 @@
         <div class="back"><a href="#">back</a></div>
         <div class="title">Registration</div>
     </div>
-    <form action="#" method="post">
+    <form action= "{% url 'Insertrecord' %}" method="POST">
+        {% csrf_token %}
         <div class="user_details">
             <div class="input_box">
                 <span class="details">Full Name</span>
-                <input type="text" placeholder="Enter your name" required>
+                <input type="text" placeholder="Enter your name" name= "name" required>
             </div>
             <div class="input_box">
                 <span class="details">Address</span>
-                <input type="text" placeholder="Enter your address" required>
+                <input type="text" placeholder="Enter your address" name= "address" required>
             </div>
             <div class="input_box">
                 <span class="details">Amount</span>
-                <input type="text" placeholder="Enter the amount" required>
+                <input type="text" placeholder="Enter the amount" name= "amount" required>
             </div>
             <div class="input_box">
                 <span class="details">Gold/Silver</span>
-                <input type="text" placeholder="Gold/Silver" required>
+                <input type="text" placeholder="Gold/Silver" name="item_type"  required>
             </div>
             <div class="input_box">
-                <span class="details">Description</span>
+                <span class="details" name="description">Description</span>
                 <input type="text">
             </div>
             <div>
@@ -42,11 +43,11 @@
                     Yes,I Agree The Terms and Conditions
                 
             </div>
-            <div class="button">
-                <input type="button" value="SUBMIT">
-            </div>
+            <br>
+            <button class="button" type="submit">SUBMIT</button>
         </div>
     </div>
-    </form>
+    
+</form>
 </body>
 </html>
