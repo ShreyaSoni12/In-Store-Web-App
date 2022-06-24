@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from home.models import CustInsert
+
+
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -19,3 +21,10 @@ def Insertrecord(request):
             return render(request,'home_page3.html',context)
     else:
         return render(request,'home_page2.html')
+
+def Viewrecord(request):
+    # context={'success':False}
+    # if request.method=="GET":
+    data = CustInsert.objects.all
+     
+    return render(request, 'loan.html',{'customer' : data})
