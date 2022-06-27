@@ -1,8 +1,10 @@
+from pydoc import describe
 from django.shortcuts import render
 from home.models import CustInsert
 
 
 # Create your views here.
+
 def home(request):
     return render(request,'home.html')
 def recognize(request):
@@ -18,13 +20,15 @@ def Insertrecord(request):
             saverecord.description=request.POST.get('description')
             saverecord.save()
             context={'success':True}
-            return render(request,'home_page3.html',context)
+            data = CustInsert.objects.last()
+            
+            return render(request,'home_page3.html',{'c' : data})
     else:
         return render(request,'home_page2.html')
 
-def Viewrecord(request):
-    # context={'success':False}
-    # if request.method=="GET":
-    data = CustInsert.objects.all
-     
-    return render(request, 'loan.html',{'customer' : data})
+# def Viewrecord(request):
+  
+    
+#     data = CustInsert.objects.last()
+#     print(data.id)
+#     return render(request, 'loan.html',{'c' : data})
