@@ -26,9 +26,9 @@ def Insertrecord(request):
     else:
         return render(request,'home_page2.html')
 
-# def Viewrecord(request):
+def Viewrecord(request):
   
     
-#     data = CustInsert.objects.last()
-#     print(data.id)
-#     return render(request, 'loan.html',{'c' : data})
+    data = CustInsert.objects.last()
+    print(data.loan_date)
+    return render(request, 'loan.html',{'c' : data})

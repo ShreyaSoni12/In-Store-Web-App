@@ -7,5 +7,5 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('recognize', views.recognize, name='recognize_me'),
     path('recognize/insert', views.Insertrecord, name='Insertrecord'),
-    # path('loan', views.Viewrecord, name="Viewrecord")
+    path('loan', views.Viewrecord, name="Viewrecord")
 ]
