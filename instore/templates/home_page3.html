@@ -21,27 +21,31 @@
             <div class="back"><a href="#">back</a></div>
             <div class="title">Confirmation</div>
         </div>
+        
         <form action="#" method="post">
             <div class="user_details">
                 <div class="input_box">
                     <span class="details">Loan Id</span>
-                    <input type="number" required>
+                    <input type="number" required value= "{{ c.id }}">
+                    
+
+                </div>
+                
+                <div class="input_box">
+                    <span class="details">Name</span>
+                    <input type="text" required value= "{{ c.name }}">
                 </div>
                 <div class="input_box">
                     <span class="details">Date and Time</span>
-                    <input type="text" required>
-                </div>
-                <div class="input_box">
-                    <span class="details">Name</span>
-                    <input type="text" required>
+                    <input  required value= "{{ c.loan_date }}">
                 </div>
                 <div class="input_box">
                     <span class="details">Amount</span>
-                    <input type="text"  required>
+                    <input type="text"  required value= "{{ c.amount }}">
                 </div>
                 <div class="input_box">
                     <span class="details">Description</span>
-                    <input type="text">
+                    <input type="text" value= "{{ c.description }}">
                 </div>
                 <div class="button3">
                     <input type="button" id="button1" value="PRINT">
