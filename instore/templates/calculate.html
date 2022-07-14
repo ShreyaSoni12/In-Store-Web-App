@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>amount to be paid</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="{% url 'interest_calculation' %}" method="post">
+            {% csrf_token %}
+            <div class="user_details">
+                <div class="input_box">
+                    <span class="details">Enter current date</span>
+                    <input name="currdate" type="date" value="2017-06-01" required>
+                </div><br>
+                <div class="input_box">
+                    <span class="details">ID</span>
+                    <input id="search" name="id" type="text" required>
+                    <br></br>
+                    <div class="button">
+                            <input type="submit" name="submit" value="CALCULATE LOAN">
+                    </div>
+                </div>
+        </form>
+</body>
+
+{% if success %}
+<h4><strong>Principle Amount : </strong></h4>
+<p>{{p}}</p>
+<h4><strong>Interest until current date : </strong></h4>
+<p>{{interest}}</p>
+<h4><strong>Amount to be paid : </strong></h4>
+<p>{{amount}}</p>
+{% endif %}
+
+</html>
