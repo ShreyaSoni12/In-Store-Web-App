@@ -11,16 +11,34 @@
     <div class="container">
     <div class="head">
         <div class="back"><a href="#">back</a></div>
-    <form action="#" method="post">
+    <form action="{% url 'search' %}" method="post">
+        {% csrf_token %}
         <div class="user_details">
             <div class="input_box">
                 <span class="details">ID</span>
-                <input type="text" required>
+                <input id="search" name="name" type="text" required>
             <div class="button">
-                <input type="button" value="GO">
+                <input type="submit" name="submit" value="VIEW CUTOMER DETAILS">
             </div>
         </div>
     </div>
     </form>
+
+    {% for result in results %}
+    <h3><strong>CUSTOMER DETAILS</strong></h3>
+    <p>ID : {{result.id}}</p>
+    <p>Name: {{result.name}}</p>
+    <p>Address : {{result.address}}</p>
+    <p>Principle Amount : {{result.amount}}</p>
+    <p>Item Type : {{result.item_type}}</p>
+    <p>Item Description : {{result.description}}</p>
+    <p>Start Date : {{result.loan_date}}</p>
+    <p>Loan Settled (Yes/No)? : {{result.settle_loan}}</p>
+
+    {% endfor %}
+    <button type="button" class="block" onclick="location.href='{% url 'calculate' %}'" >CALCULATE LOAN</button>
+        <br /><br />
+
+    
 </body>
 </html>

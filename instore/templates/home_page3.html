@@ -48,8 +48,8 @@
                     <input type="text" value= "{{ c.description }}">
                 </div>
                 <div class="button3">
-                    <input type="button" id="button1" value="PRINT">
-                    <input type="button" id="button2" value="SUBMIT">
+                    <input type="button" onclick="window.print()" id="button1" value="PRINT">
+                    <input type="button" onclick="location.href='{% url 'home' %}'" id="button2" value="SUBMIT">
                 </div>
             </div>
         </div>

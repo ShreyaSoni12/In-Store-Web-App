@@ -17,19 +17,14 @@
   <body>
     <section class="container_home1">
       <div class="buttons">
-        <button
-          type="button"
-          class="block"
-          onclick="location.href='{% url 'recognize_me' %}'"
-        >
-          ADD LOAN</button
-        ><br /><br />
-        <a class="block" href="{% url 'Viewrecord' %}">VIEW LOAN</a>
-        
+        <button type="button" class="block" onclick="location.href='{% url 'recognize_me' %}'" >ADD LOAN</button>
+          <br /><br />
+          <button type="button" class="block" onclick="location.href='{% url 'Viewloan' %}'" >VIEW LOAN</button>
+          <br /><br />
+          <button type="button" class="block" >SETTLE LOAN</button>
+          <br /><br />
           
-          
-    </a><br /><br />
-        <button class="block">LOAN</button><br /><br />
+
       </div>
     </section>
   </body>
